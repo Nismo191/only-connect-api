@@ -1,6 +1,7 @@
 from app import app, sqlite_tools
 from flask import Response
 import json
+import os
 
 import sqlite3
 
@@ -390,3 +391,4 @@ def missing_vowels_series_episode(series, episode):
     conn = init()
     data = select_series_episode_missing_vowels_from_table(conn, "missing_vowels", series, episode)
     return Response(json.dumps(data),  mimetype='application/json')
+
